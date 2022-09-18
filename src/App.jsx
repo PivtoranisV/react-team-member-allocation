@@ -5,6 +5,8 @@ import Footer from "./Footer";
 import Employees from "./Employees";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import GroupedTeamMembers from "./GroupedTeamMembers";
+import Nav from "./Nav";
 
 function App() {
   const [selectedTeam, setTeam] = useState(
@@ -125,6 +127,7 @@ function App() {
 
   return (
     <Router>
+      <Nav />
       <Header
         selectedTeam={selectedTeam}
         teamMemberCount={
@@ -146,7 +149,7 @@ function App() {
         ></Route>
         <Route
           path="/GroupedTeamMembers"
-          element={<GroupedTeamMember />}
+          element={<GroupedTeamMembers />}
         ></Route>
       </Routes>
       <Footer />
